@@ -1,0 +1,90 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Calculadora de finiquito e indemnización por despido 2026</title>
+<meta name="description" content="Calcula gratis tu finiquito (vacaciones, pagas extra, días del mes) y la indemnización por despido improcedente, objetivo o fin de contrato según el Estatuto de los Trabajadores 2026.">
+<link rel="canonical" href="https://guimeraalex020.github.io/calculadora-finiquito/">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f7fb;--card:#fff;--ink:#0f172a;--mut:#64748b;--pri:#4338ca;--pri2:#eef2ff;--acc:#f59e0b;--bd:#e2e8f0;--r:16px}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+.wrap{max-width:960px;margin:auto;padding:0 18px}header.hero{background:linear-gradient(135deg,#4338ca,#1e1b4b);color:#fff;padding:48px 0 70px}
+.badge{display:inline-block;background:rgba(255,255,255,.15);padding:4px 12px;border-radius:99px;font-size:.85rem;font-weight:600}
+h1{font-size:clamp(1.8rem,5vw,2.6rem);line-height:1.15;margin:14px 0 10px;font-weight:800}.hero p{opacity:.9;max-width:640px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:var(--r);padding:24px;box-shadow:0 10px 30px rgba(15,23,42,.06);margin-bottom:22px}
+.calc{margin-top:-48px}.grid{display:grid;gap:14px;grid-template-columns:1fr}@media(min-width:700px){.grid{grid-template-columns:1fr 1fr}}
+label{font-weight:600;font-size:.92rem;display:block;margin-bottom:5px}small{color:var(--mut);font-weight:400}
+input,select{width:100%;padding:12px;border:1px solid var(--bd);border-radius:10px;font:inherit;background:#fff}input:focus,select:focus{outline:2px solid var(--pri);border-color:transparent}
+button{background:var(--pri);color:#fff;border:0;border-radius:12px;padding:14px 22px;font:inherit;font-weight:700;cursor:pointer;width:100%;margin-top:16px}
+.res{display:none}.res.show{display:block}.kpis{display:grid;gap:12px;grid-template-columns:1fr}@media(min-width:700px){.kpis{grid-template-columns:repeat(3,1fr)}}
+.kpi{background:var(--pri2);border-radius:12px;padding:16px}.kpi b{display:block;font-size:1.5rem}.kpi.win{background:var(--pri);color:#fff}
+.note{background:#fff7e6;border-left:4px solid var(--acc);padding:12px 14px;border-radius:8px;font-size:.92rem}
+table{width:100%;border-collapse:collapse;font-size:.93rem}th,td{padding:8px;border-bottom:1px solid var(--bd);text-align:left}th{background:var(--pri2)}td.n{text-align:right}
+h2{font-size:1.4rem;margin-top:0}details{border-bottom:1px solid var(--bd);padding:12px 0}summary{font-weight:600;cursor:pointer}
+.ad-slot:empty{display:none}.ad-slot{margin:20px 0;min-height:90px}footer{color:var(--mut);font-size:.85rem;padding:30px 0}footer a{color:var(--pri)}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"¿Cuánto es la indemnización por despido improcedente en 2026?","acceptedAnswer":{"@type":"Answer","text":"33 días de salario por año trabajado con un máximo de 24 mensualidades. Para el tiempo trabajado antes del 12/02/2012 se aplican 45 días por año, con tope de 720 días o 42 mensualidades si ya se superaba."}},
+{"@type":"Question","name":"¿Cuánto es la indemnización por despido objetivo?","acceptedAnswer":{"@type":"Answer","text":"20 días de salario por año trabajado con un máximo de 12 mensualidades, más 15 días de preaviso o su pago."}},
+{"@type":"Question","name":"¿Qué incluye el finiquito?","acceptedAnswer":{"@type":"Answer","text":"Los días trabajados del último mes no cobrados, las vacaciones generadas y no disfrutadas y la parte proporcional de las pagas extra si no están prorrateadas. La indemnización va aparte."}},
+{"@type":"Question","name":"¿Tributa la indemnización por despido en el IRPF?","acceptedAnswer":{"@type":"Answer","text":"La indemnización legal obligatoria está exenta hasta 180.000 €. El finiquito (salario, vacaciones, pagas) sí tributa."}}]}</script>
+</head><body>
+<header class="hero"><div class="wrap"><span class="badge">Actualizado nov 2026 · Estatuto de los Trabajadores</span>
+<h1>Calculadora de finiquito e indemnización por despido 2026</h1><p>Calcula en segundos lo que te debe la empresa: <b>finiquito</b> (días, vacaciones y pagas extra) y la <b>indemnización</b> según el tipo de despido.</p></div></header>
+<main class="wrap">
+<section class="card calc"><form id="f"><div class="grid">
+<div><label>Fecha de inicio del contrato</label><input type="date" id="fi" required value="2018-03-01"></div>
+<div><label>Fecha de fin (último día)</label><input type="date" id="ff" required value="2026-11-15"></div>
+<div><label>Salario bruto mensual (€)</label><input type="number" id="sm" min="0" step="0.01" required value="1800"></div>
+<div><label>Número de pagas</label><select id="np"><option value="14">14 (pagas extra aparte)</option><option value="12">12 (prorrateadas)</option></select></div>
+<div><label>Motivo de la extinción</label><select id="mo">
+<option value="imp">Despido improcedente (33/45 días)</option><option value="obj">Despido objetivo / ERE (20 días)</option><option value="tmp">Fin de contrato temporal (12 días)</option><option value="dis">Despido disciplinario procedente (0)</option><option value="vol">Baja voluntaria (0)</option></select></div>
+<div><label>Vacaciones anuales <small>(días naturales)</small></label><input type="number" id="va" min="0" value="30"></div>
+<div><label>Vacaciones ya disfrutadas este año <small>(días naturales)</small></label><input type="number" id="vd" min="0" value="10"></div>
+<div><label>Pagas extra: devengo <small>(habitual)</small></label><select id="pe"><option value="sem">Semestral (jun y dic)</option><option value="anu">Anual (ene–dic)</option></select></div>
+</div><button>Calcular</button></form>
+<div id="r" class="res" aria-live="polite"><hr style="border:0;border-top:1px solid var(--bd);margin:22px 0">
+<div class="kpis"><div class="kpi" id="k1"></div><div class="kpi" id="k2"></div><div class="kpi win" id="k3"></div></div>
+<div style="overflow-x:auto;margin-top:16px"><table><tbody id="det"></tbody></table></div>
+<p class="note" id="nt"></p></div></section>
+<div class="ad-slot" data-slot="top"></div>
+<section class="card"><h2>Indemnización según el motivo del despido</h2><div style="overflow-x:auto"><table><thead><tr><th>Motivo</th><th>Días por año</th><th>Tope</th></tr></thead><tbody>
+<tr><td>Improcedente</td><td>33</td><td>24 mensualidades</td></tr><tr><td>Improcedente, contrato anterior al 12-02-2012</td><td>45 hasta esa fecha, 33 después</td><td>720 días (o 42 mens.)</td></tr>
+<tr><td>Objetivo / ERE</td><td>20</td><td>12 mensualidades</td></tr><tr><td>Fin de contrato temporal</td><td>12</td><td>Sin tope</td></tr><tr><td>Disciplinario procedente / baja voluntaria</td><td>0</td><td>—</td></tr></tbody></table></div>
+<p class="note">Salario diario = salario bruto anual con pagas extra / 365 (STS 179/2020). Las fracciones de mes cuentan como mes completo para el despido objetivo e improcedente.</p></section>
+<section class="card"><h2>Cómo se calcula el finiquito</h2>
+<p><b>Días del último mes:</b> salario mensual / 30 × días trabajados del mes.</p>
+<p><b>Vacaciones no disfrutadas:</b> días generados en el año (vacaciones anuales × días trabajados / 365) menos los disfrutados, × salario diario.</p>
+<p><b>Pagas extra:</b> si no están prorrateadas, la parte devengada desde la última paga cobrada.</p></section>
+<div class="ad-slot" data-slot="mid"></div>
+<section class="card"><h2>¿Crees que tu despido es improcedente?</h2><p>Tienes <b>20 días hábiles</b> para presentar la papeleta de conciliación. Un abogado laboralista puede revisar tu carta de despido y el finiquito antes de firmar "no conforme".</p><div class="ad-slot" data-slot="affiliate"></div></section>
+<section class="card"><h2>Preguntas frecuentes</h2>
+<details><summary>¿Cuánto es la indemnización por despido improcedente?</summary><p>33 días por año trabajado, máximo 24 mensualidades; 45 días por año para el tiempo anterior al 12/02/2012.</p></details>
+<details><summary>¿Cuánto es la indemnización por despido objetivo?</summary><p>20 días por año, máximo 12 mensualidades, más 15 días de preaviso.</p></details>
+<details><summary>¿Qué incluye el finiquito?</summary><p>Días trabajados del último mes, vacaciones no disfrutadas y parte proporcional de pagas extra. La indemnización va aparte.</p></details>
+<details><summary>¿Tributa la indemnización?</summary><p>La indemnización legal está exenta de IRPF hasta 180.000 €; el finiquito sí tributa.</p></details>
+<details><summary>¿Debo firmar el finiquito?</summary><p>Puedes firmarlo como "recibido, no conforme" si no estás de acuerdo, para poder reclamar después.</p></details></section>
+</main>
+<footer class="wrap">Herramienta orientativa, no vinculante ni asesoramiento legal. Revisa tu convenio colectivo. · <a href="privacy.html">Privacidad</a> · © 2026</footer>
+<script>
+const $=i=>document.getElementById(i),eur=x=>x.toLocaleString('es-ES',{style:'currency',currency:'EUR'});
+const D=s=>new Date(s+'T00:00:00'),day=864e5;
+function months(a,b){let m=(b.getFullYear()-a.getFullYear())*12+b.getMonth()-a.getMonth();if(b.getDate()>=a.getDate())m+=1;else if(m<1)m=1;return Math.max(m,0)}
+$('f').onsubmit=e=>{e.preventDefault();
+const fi=D($('fi').value),ff=D($('ff').value);if(ff<fi)return alert('La fecha de fin debe ser posterior');
+const sm=+$('sm').value,np=+$('np').value,anual=sm*np,sd=anual/365,mo=$('mo').value;
+// finiquito
+const dm=ff.getDate(),pMes=sm/30*Math.min(dm,30);
+const y0=new Date(ff.getFullYear(),0,1),st=fi>y0?fi:y0,dy=Math.round((ff-st)/day)+1;
+const vGen=+$('va').value*dy/365,vPend=vGen-(+$('vd').value),pVac=vPend*sd;
+let pExt=0;if(np==14){if($('pe').value=='sem'){const h=ff.getMonth()<6?y0:new Date(ff.getFullYear(),6,1),s=fi>h?fi:h,d=Math.round((ff-s)/day)+1,len=ff.getMonth()<6?181:184;pExt=sm*d/len}else{pExt=sm*2*dy/365}}
+const fin=pMes+pVac+pExt;
+// indemnización
+const ref=D('2012-02-12');let ind=0,txt='';const sMes=anual/12;
+if(mo=='imp'){if(fi<ref){const m1=months(fi,new Date(ref-day)),m2=months(ref,ff);const d1=45*m1/12,d2=33*m2/12;let dias=d1+d2,top=d1>720?Math.min(d1,1260):720;dias=Math.min(dias,top);ind=dias*sd;txt=`${d1.toFixed(1)} días (45/año) + ${d2.toFixed(1)} días (33/año); tope ${top} días.`}
+ else{const m=months(fi,ff);ind=Math.min(33*m/12,720)*sd;txt=`${m} meses × 33 días/año; tope 24 mensualidades.`;ind=Math.min(ind,24*sMes)}}
+else if(mo=='obj'){const m=months(fi,ff);ind=Math.min(20*m/12*sd,12*sMes);txt=`${m} meses × 20 días/año; tope 12 mensualidades. Además, 15 días de preaviso (${eur(15*sd)}) si no te lo dieron.`}
+else if(mo=='tmp'){const yrs=(ff-fi)/day/365;ind=12*yrs*sd;txt=`${yrs.toFixed(2)} años × 12 días.`}
+else txt='Este motivo no genera indemnización legal; sí te corresponde el finiquito.';
+$('k1').innerHTML='Finiquito<b>'+eur(fin)+'</b>';$('k2').innerHTML='Indemnización<b>'+eur(ind)+'</b>';$('k3').innerHTML='Total bruto<b>'+eur(fin+ind)+'</b>';
+$('det').innerHTML=`<tr><th>Concepto</th><th>Importe</th></tr><tr><td>Salario de ${Math.min(dm,30)} días del último mes</td><td class=n>${eur(pMes)}</td></tr><tr><td>Vacaciones no disfrutadas (${vPend.toFixed(1)} días)</td><td class=n>${eur(pVac)}</td></tr><tr><td>Parte proporcional pagas extra</td><td class=n>${eur(pExt)}</td></tr><tr><td>Indemnización</td><td class=n>${eur(ind)}</td></tr><tr><td>Salario diario indemnización (anual/365)</td><td class=n>${eur(sd)}</td></tr>`;
+$('nt').textContent=txt+' Importes brutos orientativos; tu convenio puede mejorarlos.';$('r').classList.add('show')};
+</script></body></html>
